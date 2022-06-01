@@ -170,7 +170,7 @@ class Menu {
                     job = `Office Number: ${listInfo[i].typical}`;
                     break;
                 case "Engineer":
-                    job = `Github: <a href="github.com/${listInfo[i].typical}">${listInfo[i].typical}</a>`;
+                    job = `Github: <a href="https://www.github.com/${listInfo[i].typical}">${listInfo[i].typical}</a>`;
                     break;
                 case "Intern":
                     job = `School: ${listInfo[i].typical}`;
