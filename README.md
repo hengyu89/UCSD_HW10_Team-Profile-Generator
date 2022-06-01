@@ -30,4 +30,4 @@ SO THAT I have quick access to their emails and GitHub profiles
 
 ## Screenshot:
 
-![This is the Screenshot of the generated html webpage.](./dist/DemoScreenshot.png)
+![This is the Screenshot of the generated html webpage.](./dist/screenshot.png)
