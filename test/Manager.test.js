@@ -40,5 +40,16 @@ describe("Manager", () => {
       
             expect(cb).toThrowError(err);
           });
+
+          it("should print the manager's all information", () => {
+            const manager = new Manager("Heng Yu", 2, "heng.yu161@gmail.com", 5);
+            const mock = jest.spyOn(console, "log");
+            mock.mockImplementation(() => {});
+  
+            manager.getRole();
+  
+            expect(mock).toBeCalledWith(`\nThis manager:\nName: Heng Yu. \nEmail Address: heng.yu161@gmail.com \nID: 2\nOffice Number: 5`);
+            mock.mockRestore();
+          });
     })
 })

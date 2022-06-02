@@ -26,5 +26,27 @@ describe("Engineer", () => {
       
             expect(cb).toThrowError(err);
           });
+
+          it("should print the engineer's Github account", () => {
+            const engineer = new Engineer("Heng Yu", 2, "heng.yu161@gmail.com", "hengyu89");
+            const mock = jest.spyOn(console, "log");
+            mock.mockImplementation(() => {});
+  
+            engineer.getGithub();
+  
+            expect(mock).toBeCalledWith(`The engineer's GitHub account: hengyu89`);
+            mock.mockRestore();
+          });
+
+          it("should print the engineer's all information", () => {
+            const engineer = new Engineer("Heng Yu", 2, "heng.yu161@gmail.com", "hengyu89");
+            const mock = jest.spyOn(console, "log");
+            mock.mockImplementation(() => {});
+  
+            engineer.getRole();
+  
+            expect(mock).toBeCalledWith(`\nThis engineer:\nName: Heng Yu. \nEmail Address: heng.yu161@gmail.com \nID: 2\nGithub: hengyu89`);
+            mock.mockRestore();
+          });
     })
 })

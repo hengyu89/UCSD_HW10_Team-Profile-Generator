@@ -18,13 +18,35 @@ describe("Intern", () => {
             const err = new Error("Expected parameter 'id' to be a positive number");
       
             expect(cb).toThrowError(err);
-          });
-      
-          it("should throw an error if 'id' is less than 0", () => {
+        });
+    
+        it("should throw an error if 'id' is less than 0", () => {
             const cb = () => new Intern("Heng Yu", -1, "heng.yu161@gmail.com", "UCSD");
             const err = new Error("Expected parameter 'id' to be a positive number");
       
             expect(cb).toThrowError(err);
-          });
+        });
+
+        it("should print the Intern's school name", () => {
+          const intern = new Intern("Heng Yu", 2, "heng.yu161@gmail.com", "UCSD");
+          const mock = jest.spyOn(console, "log");
+          mock.mockImplementation(() => {});
+
+          intern.getSchool();
+
+          expect(mock).toBeCalledWith(`The Intern's school is: UCSD.`);
+          mock.mockRestore();
+        });
+
+        it("should print the intern's all information", () => {
+          const intern = new Intern("Heng Yu", 2, "heng.yu161@gmail.com", "UCSD");
+          const mock = jest.spyOn(console, "log");
+          mock.mockImplementation(() => {});
+
+          intern.getRole();
+
+          expect(mock).toBeCalledWith(`\nThis intern:\nName: Heng Yu. \nEmail Address: heng.yu161@gmail.com \nID: 2\nschool: UCSD`);
+          mock.mockRestore();
+        });
     })
 })
